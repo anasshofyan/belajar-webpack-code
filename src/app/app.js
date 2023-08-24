@@ -1,5 +1,9 @@
+const parseInput = require('./utils/parseInput');
+const cekInputValid = require('./utils/cekInputValid');
+
 const run = (alertService, calculatorService, jokesService) => {
   alertService.sembunyikanError();
+
 
   calculatorService.onClick(() => {
     alertService.sembunyikanError();
