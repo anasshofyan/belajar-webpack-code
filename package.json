@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack -o ./outputs --output-filename bundle.js"
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
