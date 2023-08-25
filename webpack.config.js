@@ -11,10 +11,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use:["style-loader", "css-loader"]
-            },
-            {
                 test: /\.m?.js$/, // mencari file yang berakhiran .mjs atau .js
                 exclude: /(node_modules|bower_components)/, // jika ada file yang ada di node_modules atau bower_components, maka file tersebut tidak akan di compile
                 use: {
@@ -23,6 +19,14 @@ module.exports = {
                         presets: ['@babel/preset-env'] // menggunakan preset-env
                     }
                 }
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    "style-loader", // Creates `style` nodes from JS strings
+                    "css-loader", // Translates CSS into CommonJS
+                    "sass-loader", // Compiles Sass to CSS
+                ]
             }
         ]
     },
