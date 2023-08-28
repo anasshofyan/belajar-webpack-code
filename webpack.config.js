@@ -1,12 +1,18 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // Require  html-webpack-plugin plugin
 const path = require('path');
 
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'output'),
-        filename: 'bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main-[contenthash].js'
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/template.html',
+        }) // plugin for inserting scripts into the body of the html file
+    ],
     watch: true,
     module: {
         rules: [
